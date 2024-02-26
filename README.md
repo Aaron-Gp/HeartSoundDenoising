@@ -14,6 +14,8 @@ Detailed  explaination:
 
 `test.pkl` is a [16310, 1, 2500] pytorch tensor.
 
+> the data above is only resampled to 1kHz (each 2.5s) and without other processing.
+
 `splits.pkl` is a list, which contains 5-fold index as tuples. Each fold (tuple) has two ndarray elements, where the first shape is (52194,) and the second shape is (13049,).
 
 ## Reference
