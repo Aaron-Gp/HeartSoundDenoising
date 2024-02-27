@@ -8,13 +8,17 @@ We use the dataset of the [PhysioNet/CinC Challenge in 2016](https://physionet.o
 
 Pre-processing data used in the paper are available [here](https://drive.google.com/drive/folders/1w152ZH0Tnvb_vTojDcH9a22jBPJNVUQb?usp=sharing).
 
-Detailed  explaination:
+Detailed  explaination follows:
 
-`train.pkl` is a [65243, 1, 2500] pytorch tensor.
+`segment_data.pkl` is a (81553, 5000) numpy ndarray, containing all heart sound segments we collected.
 
-`test.pkl` is a [16310, 1, 2500] pytorch tensor.
+>  the segments are 2kHz and last for 2.5s.
 
-> the data above is only resampled to 1kHz (each 2.5s) and without other processing.
+`seg_label.pkl` is a (81553,) numpy ndarray, containing the corresponding labels for all segments.
+
+>  where -1 represents normal and 1 represents abnormal, but you should change -1 to 0 during experiments.
+
+`train_idx.pkl` (65243) and  `test_idx.pkl` (16310) are list, containing the index for training and test, respectively.
 
 `splits.pkl` is a list, which contains 5-fold index as tuples. Each fold (tuple) has two ndarray elements, where the first shape is (52194,) and the second shape is (13049,).
 
